@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm Clock</title>
+    <script src="https://kit.fontawesome.com/6c7d80623e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="dark_mode_button" class="position-fixed" style="top: 20px; right: 20px; padding: 2px;">
+      <button id="dark-mode-toggle" class="btn btn-dark">Dark Mode<i class="fa-solid fa-moon"></i></button>
+  </div>
+  
+    <div class="container">
+      <h1 class="text-center mt-5">Alarm Clock</h1>
+      <div class="row justify-content-center mt-3">
+        <div class="col-auto">
+          <label for="alarm-time">Set Alarm Time:</label>
+          <input type="time" id="alarm-time" class="form-control">
+        </div>
+        <div class="col-auto">
+          <button id="set-alarm" class="btn btn-primary">Set Alarm</button>
+        </div>
+      </div>
+      <!-- <div class="row justify-content-center mt-3">
+        <div class="col-auto">
+          <button id="dark-mode-toggle" class="btn btn-dark">Dark Mode</button>
+        </div>
+      </div> -->
+      <div id="analog-clock" class="text-center mt-5">
+        <svg id="clock" width="200" height="200">
+            <!-- Clock face -->
+            <circle id="clock-face" cx="100" cy="100" r="95" stroke="#b06a26" stroke-width="10" fill="white" />
+            <!-- Hour markings and numbers -->
+            <g id="hour-markings">
+                <!-- Numbers -->
+                <text x="100" y="30" text-anchor="middle" font-size="12" fill="black">12</text>
+                <text x="180" y="105" text-anchor="middle" font-size="12" fill="black">3</text>
+                <text x="100" y="180" text-anchor="middle" font-size="12" fill="black">6</text>
+                <text x="20" y="105" text-anchor="middle" font-size="12" fill="black">9</text>
+                <!-- Hour markings -->
+                <line x1="100" y1="5" x2="100" y2="15" stroke="black" stroke-width="2" />
+                <line x1="195" y1="100" x2="185" y2="100" stroke="black" stroke-width="2" />
+                <line x1="100" y1="195" x2="100" y2="185" stroke="black" stroke-width="2" />
+                <line x1="5" y1="100" x2="15" y2="100" stroke="black" stroke-width="2" />
+            </g>
+
+            <!-- Hours hand -->
+            <line id="hour-hand" x1="100" y1="100" x2="100" y2="50" stroke="black" stroke-width="10" />
+
+            <!-- Minutes hand -->
+            <line id="minute-hand" x1="100" y1="100" x2="100" y2="30" stroke="black" stroke-width="10" />
+
+            <!-- Seconds hand -->
+            <line id="second-hand" x1="100" y1="100" x2="100" y2="20" stroke="red" stroke-width="1" />
+            <circle cx="100" cy="100" r="4" fill="black" />
+            <circle cx="100" cy="100" r="2" fill="white" />
+        </svg>
+    </div>
+      <div id="clock" class="row justify-content-center mt-3">
+        <div id="digital-clock" class="col-auto">
+          <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
+        </div>
+      </div>
+      <div id="alarms-list" class="row justify-content-center mt-3">
+        <div class="col-auto">
+          <h3>Alarms</h3>
+          <ul id="alarms">
+            <!-- Alarms will be dynamically added here -->
+          </ul>
+        </div>
+      </div>
+      <div class="row justify-content-center mt-3">
+        <div id="alarm-status" class="col-auto">
+          Alarm is currently not set.
+        </div>
+      </div>
+      <div class="row justify-content-center mt-3">
+        <div id="counter" class="col-auto">
+          Time until alarm: <span id="countdown-text">-</span>
+        </div>
+      </div>
+      <div id="alarm-controls" class="row justify-content-center mt-3 d-none">
+        <div class="col-auto">
+          <button id="stop-alarm" class="btn btn-danger mr-2">Stop Alarm</button>
+          <button id="snooze-alarm" class="btn btn-warning">Snooze</button>
+        </div>
+    </div>
+      </div>
+      <!-- Repeat Alarms -->
+    <div class="col-auto">
+      <label for="repeat-days">Repeat:</label>
+      <select id="repeat-days" class="form-control">
+        <option value="daily">Daily</option>
+        <option value="weekdays">Weekdays</option>
+        <!-- Add more options as needed -->
+      </select>
+    </div>
+    </div>
+
+
+    <audio id="alarm-sound" src="soft_alarm.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>

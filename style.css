@@ -1,0 +1,93 @@
+/* Light Mode */
+body {
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+}
+
+.btn-dark {
+  background-color: #343a40;
+  color: #fff;
+  border-color: #343a40;
+}
+
+#dark_mode_button{
+  display: inline;
+  margin-top: 20px;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+.container.dark-mode {
+  background-color: #444;
+  color: #fff;
+}
+
+.btn-dark.dark-mode {
+  background-color: #555;
+  color: #fff;
+  border-color: #555;
+}
+
+
+#digital-clock {
+    margin-left: 250px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 8px;
+    background-color: rgb(5, 160, 249);
+}
+
+#counter {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#alarm-controls {
+    margin-top: 20px;
+}
+
+#analog-clock {
+    margin-top: 20px;
+}
+
+#clock {
+    display: inline-block;
+}
+
+#clock-face {
+    fill: white;
+}
+
+#hour-hand {
+    stroke: rgb(241, 20, 20);
+    stroke-width: 4;
+}
+
+#minute-hand {
+    stroke: green;
+    stroke-width: 3;
+}
+
+#second-hand {
+    stroke: rgb(239, 58, 161);
+    stroke-width: 2;
+}
+
+
+
+
